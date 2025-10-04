@@ -1,0 +1,1 @@
+ The output logs for "started processing" should show that the processing of the files is distributed between the two worker threads.

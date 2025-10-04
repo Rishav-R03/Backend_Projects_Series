@@ -1,0 +1,6 @@
+File empty_d.txt | Lines 0 | Unique Words 0 | Longest Line Length: 0
+File long_line.txt | Lines 1 | Unique Words 1 | Longest Line Length: 44
+File large_b.txt | Lines 1 | Unique Words 17 | Longest Line Length: 133
+File duplicates_e.txt | Lines 1 | Unique Words 3 | Longest Line Length: 38
+File small_a.txt | Lines 1 | Unique Words 5 | Longest Line Length: 27
+--- END OF PROCESSING --
