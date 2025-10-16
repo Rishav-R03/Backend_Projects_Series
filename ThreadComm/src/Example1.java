@@ -20,9 +20,9 @@ class SharedBuffer{
         notify(); // wake up waiting threads
     }
 
-    public synchronized int consume() throws InterruptedException{
+    public synchronized int consumer() throws InterruptedException{
         while(!hasData){
-            System.out.println(Thread.currentThread().getName() + " waititng to consume data");
+            System.out.println(Thread.currentThread().getName() + " waiting to consume data");
             wait();
         }
         // consume
@@ -50,7 +50,7 @@ public class Example1 {
         Thread consumer = new Thread(()->{
             try{
                 for(int i = 1;i<=5;i++){
-                    sb.consume();
+                    sb.consumer();
                     Thread.sleep(1500);
                 }
             } catch (InterruptedException e) {
