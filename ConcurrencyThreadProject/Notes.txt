@@ -1,0 +1,162 @@
+📝 Project Documentation: Producer-Consumer Problem in Java
+This project demonstrates the classic Producer-Consumer problem using modern, high-level Java concurrency utilities, primarily the ArrayBlockingQueue.
+
+🧠 Core Concurrency Concepts Demonstrated
+Concept	Description
+BlockingQueue	A thread-safe queue interface (ArrayBlockingQueue is the implementation we used). It automatically handles synchronization.
+Blocking Methods	put() and take() are blocking methods. If the queue is full, put() blocks the Producer. If the queue is empty, take() blocks the Consumer. This replaces the need for manual wait(), notify(), and synchronized blocks.
+Thread Safety	The entire solution is thread-safe because the ArrayBlockingQueue handles all internal state management concurrently.
+Flow Control	The bounded size (capacity) of the queue acts as flow control, preventing the fast Producer from overwhelming the slow Consumer, or vice-versa.
+___________________________________________________________________________________________________________________________________________
+Step 1: Shared Resource (The Buffer)
+This class holds the thread-safe queue that connects the Producers and Consumers.
+
+SharedResource.java
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+// The shared resource (the buffer/queue)
+public class SharedResource {
+    // ArrayBlockingQueue is thread-safe and has a fixed capacity (10)
+    private final BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
+
+    // Method for the Producer
+    public void put(int item) throws InterruptedException {
+        // Blocks if the queue (capacity 10) is full
+        queue.put(item);
+        System.out.println("Producer produced: " + item +
+                           " | Queue size: " + queue.size());
+    }
+
+    // Method for the Consumer
+    public int take() throws InterruptedException {
+        // Blocks if the queue is empty
+        int item = queue.take();
+        System.out.println("Consumer consumed: " + item +
+                           " | Queue size: " + queue.size());
+        return item;
+    }
+}
+
+Key Takeaways (Step 1)
+The capacity (10) enforces the resource limit.
+
+queue.put(item) handles the wait() and notify() logic when the queue is full.
+
+queue.take() handles the wait() and notify() logic when the queue is empty.
+
+___________________________________________________________________________________________
+Step 2: The Producer Thread
+The producer generates items and puts them into the shared resource.
+
+Producer.java
+Java
+
+public class Producer implements Runnable {
+    private final SharedResource sharedResource;
+
+    public Producer(SharedResource sharedResource) {
+        this.sharedResource = sharedResource;
+    }
+
+    @Override
+    public void run() {
+        int itemCounter = 0;
+        try {
+            while (itemCounter < 20) {
+                itemCounter++;
+                // Simulate production delay
+                Thread.sleep((long) (Math.random() * 100));
+
+                // Calls the blocking put() method
+                sharedResource.put(itemCounter);
+            }
+            System.out.println("Producer finished producing 20 items.");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.err.println("Producer interrupted.");
+        }
+    }
+}
+
+________________________________________________________________________________________________
+Step 3: The Consumer Thread
+The consumer takes items from the shared resource and processes them.
+
+Consumer.java
+Java
+
+public class Consumer implements Runnable {
+    private final SharedResource sharedResource;
+
+    public Consumer(SharedResource sharedResource) {
+        this.sharedResource = sharedResource;
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) { // Runs indefinitely until manually interrupted
+                // Calls the blocking take() method
+                int item = sharedResource.take();
+
+                // Simulate consumption/processing delay
+                Thread.sleep((long) (Math.random() * 250));
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.err.println("Consumer interrupted.");
+        }
+    }
+}
+
+____________________________________________________________________________________________________________________
+Step 4: The Main Application (Orchestrator)
+This class creates the shared resource and manages the lifecycle of multiple Producer and Consumer threads.
+
+Main.java
+Java
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+
+        // 1. Create the single shared resource instance
+        SharedResource sharedResource = new SharedResource();
+
+        // 2. Create the tasks (Runnables)
+        Runnable producerTask = new Producer(sharedResource);
+        Runnable consumerTask = new Consumer(sharedResource);
+
+        // 3. Create the actual threads (We use 2 of each for true concurrency)
+        Thread producerThread1 = new Thread(producerTask, "Producer-1");
+        Thread producerThread2 = new Thread(producerTask, "Producer-2");
+        Thread consumerThread1 = new Thread(consumerTask, "Consumer-1");
+        Thread consumerThread2 = new Thread(consumerTask, "Consumer-2");
+
+        // 4. Start the threads
+        producerThread1.start();
+        producerThread2.start();
+        consumerThread1.start();
+        consumerThread2.start();
+
+        // 5. Wait for Producers to finish their 40 total items
+        producerThread1.join(); // Main thread waits for Producer-1
+        producerThread2.join(); // Main thread waits for Producer-2
+
+        // Wait a moment for consumers to clear the queue
+        Thread.sleep(2000);
+
+        // 6. Stop the consumers (which are in an infinite loop)
+        consumerThread1.interrupt();
+        consumerThread2.interrupt();
+
+        System.out.println("\nSystem Shutdown Complete.");
+    }
+}
+Key Takeaways (Step 4)
+start(): Immediately initiates the run() method on a new thread.
+
+join(): Causes the main thread to wait for the specified thread to complete, ensuring the program doesn't exit before the work is done.
+
+interrupt(): The standard way to stop a thread gracefully when it's waiting (like waiting on take() or sleeping). This triggers the InterruptedException catch block.
