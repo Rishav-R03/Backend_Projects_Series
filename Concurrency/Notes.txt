@@ -1,0 +1,27 @@
+Executor is a set of interfaces that represents an object
+whose implementation executes tasks. It depends on the 
+implementation whether the task should be run on new thread. 
+
+
+public interface Executor{
+    void execute(Runnable command);
+}
+
+public class Invoker implements Executor{
+    @Override
+    public void execute(Runnable r){
+        r.run();
+    }
+}
+
+ExecutorService is an interface and only forces the underlying 
+implementation to implement execute() method. 
+It extends the Executor interface and adds a series of methods 
+that execute threads that return a value. The methods to shut 
+the thread pool as well as the ability to implement for the result of 
+the execution of the task.
+
+C. ScheduledExecutorService
+It is similar to ExecutorService. The difference is that this interface can perform tasks periodically. 
+Both Runnable and Callable function is used to define the task.
+
