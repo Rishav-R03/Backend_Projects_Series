@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ConcurrencyThreadProject/ConcurrencyThreadProject.iml" filepath="$PROJECT_DIR$/ConcurrencyThreadProject/ConcurrencyThreadProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Deadlocks_ThreadComm/Deadlocks_ThreadComm.iml" filepath="$PROJECT_DIR$/Deadlocks_ThreadComm/Deadlocks_ThreadComm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LocksInJava/LocksInJava.iml" filepath="$PROJECT_DIR$/LocksInJava/LocksInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThreadComm/ThreadComm.iml" filepath="$PROJECT_DIR$/ThreadComm/ThreadComm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThreadsInJava/ThreadsInJava.iml" filepath="$PROJECT_DIR$/ThreadsInJava/ThreadsInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebCrawlerProject/WebCrawlerProject.iml" filepath="$PROJECT_DIR$/WebCrawlerProject/WebCrawlerProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebCrawlerProject/lib/lib.iml" filepath="$PROJECT_DIR$/WebCrawlerProject/lib/lib.iml" />
+    </modules>
+  </component>
+</project>
