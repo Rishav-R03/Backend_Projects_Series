@@ -26,18 +26,42 @@ class TaskCoord{
 }
 
 public class Example4_ThreadCoord {
-    public static void main(String [] args){
-        TaskCoord coord = new TaskCoor();
+    public static void main(String [] args) throws InterruptedException {
+        TaskCoord coord = new TaskCoord();
 
         Thread worker = new Thread(()->{
             coord.completeTask("Data Processing");
         },"Worker");
 
-        Thread dependent1 = new Thread(()->{
-            try{
-                
+        Thread dependent1 = new Thread(() -> {
+            try {
+                coord.waitForTaskCompletion();
+                System.out.println(Thread.currentThread().getName() +
+                        " doing its work now");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        })
+        }, "Dependent-1");
+
+        Thread dependent2 = new Thread(() -> {
+            try {
+                coord.waitForTaskCompletion();
+                System.out.println(Thread.currentThread().getName() +
+                        " doing its work now");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "Dependent-2");
+
+        System.out.println("\n=== TASK COORDINATION ===");
+        dependent1.start();
+        dependent2.start();
+        Thread.sleep(500); // Let dependents start waiting
+        worker.start();
+
+        worker.join();
+        dependent1.join();
+        dependent2.join();
     }
 }
     
