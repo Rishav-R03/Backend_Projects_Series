@@ -28,6 +28,7 @@ public class ThreadCom_PingPong {
         Thread pingThread = new Thread(()->{
             try{
                 pingpong.ping();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -36,6 +37,7 @@ public class ThreadCom_PingPong {
         Thread pongThread = new Thread(()->{
             try{
                 pingpong.pong();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
