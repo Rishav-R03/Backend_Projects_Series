@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Executor/Executor.iml" filepath="$PROJECT_DIR$/Executor/Executor.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageProcessor/ImageProcessor.iml" filepath="$PROJECT_DIR$/ImageProcessor/ImageProcessor.iml" />
       <module fileurl="file://$PROJECT_DIR$/LocksInJava/LocksInJava.iml" filepath="$PROJECT_DIR$/LocksInJava/LocksInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScheduledExecutor/ScheduledExecutor.iml" filepath="$PROJECT_DIR$/ScheduledExecutor/ScheduledExecutor.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadComm/ThreadComm.iml" filepath="$PROJECT_DIR$/ThreadComm/ThreadComm.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadsInJava/ThreadsInJava.iml" filepath="$PROJECT_DIR$/ThreadsInJava/ThreadsInJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/WebCrawlerProject/WebCrawlerProject.iml" filepath="$PROJECT_DIR$/WebCrawlerProject/WebCrawlerProject.iml" />
