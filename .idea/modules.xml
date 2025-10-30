@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/OOPS/AbstractionPractice/AbstractionPractice.iml" filepath="$PROJECT_DIR$/OOPS/AbstractionPractice/AbstractionPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/ConcurrencyThreadProject/ConcurrencyThreadProject.iml" filepath="$PROJECT_DIR$/ConcurrencyThreadProject/ConcurrencyThreadProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/Deadlocks_ThreadComm/Deadlocks_ThreadComm.iml" filepath="$PROJECT_DIR$/Deadlocks_ThreadComm/Deadlocks_ThreadComm.iml" />
       <module fileurl="file://$PROJECT_DIR$/PracticeJava/ExceptionHandling/ExceptionHandling.iml" filepath="$PROJECT_DIR$/PracticeJava/ExceptionHandling/ExceptionHandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/Executor/Executor.iml" filepath="$PROJECT_DIR$/Executor/Executor.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageProcessor/ImageProcessor.iml" filepath="$PROJECT_DIR$/ImageProcessor/ImageProcessor.iml" />
       <module fileurl="file://$PROJECT_DIR$/LocksInJava/LocksInJava.iml" filepath="$PROJECT_DIR$/LocksInJava/LocksInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOPS/OOPS.iml" filepath="$PROJECT_DIR$/OOPS/OOPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/PracticeJava/PracticeJava.iml" filepath="$PROJECT_DIR$/PracticeJava/PracticeJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/ScheduledExecutor/ScheduledExecutor.iml" filepath="$PROJECT_DIR$/ScheduledExecutor/ScheduledExecutor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ConcurrencyThreadProject/SemophorePractice/SemophorePractice.iml" filepath="$PROJECT_DIR$/ConcurrencyThreadProject/SemophorePractice/SemophorePractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadComm/ThreadComm.iml" filepath="$PROJECT_DIR$/ThreadComm/ThreadComm.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadsInJava/ThreadsInJava.iml" filepath="$PROJECT_DIR$/ThreadsInJava/ThreadsInJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/WebCrawlerProject/WebCrawlerProject.iml" filepath="$PROJECT_DIR$/WebCrawlerProject/WebCrawlerProject.iml" />
