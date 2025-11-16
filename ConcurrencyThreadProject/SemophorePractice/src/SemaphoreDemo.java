@@ -2,7 +2,7 @@ private static final Semaphore CONNECTION_LIMITER = new Semaphore(3);
 
 static class UserTask implements Runnable {
     private final String userName;
-
+    
     public UserTask(String name) {
         this.userName = name;
     }
