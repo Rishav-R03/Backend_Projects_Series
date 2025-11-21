@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/AudioPlayer/AudioPlayer.iml" filepath="$PROJECT_DIR$/AudioPlayer/AudioPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ConcurrencyThreadProject/ConcurrencyThreadProject.iml" filepath="$PROJECT_DIR$/ConcurrencyThreadProject/ConcurrencyThreadProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/Deadlocks_ThreadComm/Deadlocks_ThreadComm.iml" filepath="$PROJECT_DIR$/Deadlocks_ThreadComm/Deadlocks_ThreadComm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPatterns/DesignPatterns.iml" filepath="$PROJECT_DIR$/DesignPatterns/DesignPatterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/PracticeJava/ExceptionHandling/ExceptionHandling.iml" filepath="$PROJECT_DIR$/PracticeJava/ExceptionHandling/ExceptionHandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/Executor/Executor.iml" filepath="$PROJECT_DIR$/Executor/Executor.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageProcessor/ImageProcessor.iml" filepath="$PROJECT_DIR$/ImageProcessor/ImageProcessor.iml" />
